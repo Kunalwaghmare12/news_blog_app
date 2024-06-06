@@ -26,9 +26,9 @@ class _AuthScreenState extends State<AuthScreen> {
                 children: [
                   Center(
                       child: Image.asset(
-                    MyAssets.authScreenLogo,
-                    height: 100.h,
-                    width: 200.h,
+                    MyAssets.appLogo,
+                    height: 75.h,
+                    width: 150.w,
                   )),
                   const Spacer(),
                   const Text(
@@ -39,63 +39,13 @@ class _AuthScreenState extends State<AuthScreen> {
                         color: Colors.white),
                   ),
                   SizedBox(height: 20.h),
-                  ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(11.r)),
-                        backgroundColor: MyColors.primaryColor,
-                        minimumSize:
-                            Size(MediaQuery.of(context).size.width.w, 44),
-                      ),
-                      onPressed: () {},
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text(
-                            "Login",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                          SizedBox(width: 10.w),
-                          const Icon(
-                            Icons.arrow_circle_right,
-                            color: Colors.white,
-                          )
-                        ],
-                      )),
+                  PrimaryButton(title: 'Login',ButtonIcon: const Icon(Icons.arrow_right,color: Colors.white,),onPressed: (){
+                    AutoRouter.of(context).push(const LoginScreenRoute());
+                  },),
                   SizedBox(height: 10.h),
-                  ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.transparent,
-                        shape: RoundedRectangleBorder(
-                          side: const BorderSide(color: Colors.white),
-                          borderRadius: BorderRadius.circular(11.r),
-                        ),
-                        minimumSize:
-                            Size(MediaQuery.of(context).size.width.w, 44),
-                      ),
-                      onPressed: () {},
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text(
-                            "Register",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                          SizedBox(width: 10.w),
-                          const Icon(
-                            Icons.app_registration_sharp,
-                            color: Colors.white,
-                          )
-                        ],
-                      )),
+                  TransparentButton(title:'Register',ButtonIcon: const Icon(Icons.app_registration_sharp,color: Colors.white,),onPressed: (){
+                    AutoRouter.of(context).push(const RegisterScreenRoute());
+                  }),
                   SizedBox(height: 30.h),
                 ],
               ),

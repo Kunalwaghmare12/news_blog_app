@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
           scale:_scale, // Animate using a variable (e.g., set to 0 initially and change to 1 in initState)
           duration: const Duration(milliseconds:500), // Animation duration
           curve: Curves.decelerate, // Animation curve (optional)
-          child: Image.network(MyAssets.logoImg,
+          child: Image.asset(MyAssets.appLogo,height: 75.h,width: 150.w,
           ),
         ),
       ),

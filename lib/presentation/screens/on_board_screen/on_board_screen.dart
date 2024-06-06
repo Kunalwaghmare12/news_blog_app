@@ -19,34 +19,16 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
         child: Column(
           children: [
             SizedBox(height: 20.h,),
-            const Text(
-              "News App",
-              style: TextStyle(
-                  color: Colors.orangeAccent,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold),
-            ),
+            Image.asset(MyAssets.appLogo,height: 75.h,width:150.w,),
             SizedBox(height: 50.h,),
             Expanded(
                 child: PageView(
                   children: const [OnBoardFirst(),OnBoardSecond(),OnBoardThird()
                   ],
                 ),),
-            ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: MyColors.primaryColor,
-                  minimumSize: Size(MediaQuery.of(context).size.width.w, 44),
-                ),
-                onPressed: () {
-                  AutoRouter.of(context).push(const AuthScreenRoute());
-                },
-                child: const Text(
-                  "Get Started",
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w700,
-                  ),
-                )),
+            PrimaryButton(title: 'Get Started', ButtonIcon:const Icon(Icons.run_circle_sharp,color: Colors.white,),onPressed:(){
+              AutoRouter.of(context).push(const AuthScreenRoute());
+            }),
             SizedBox(height: 20.h,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -61,3 +43,4 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
     )));
   }
 }
+
